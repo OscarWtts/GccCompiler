@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GccCompiler</title>
+		<link rel="shortcut icon" href="IMG/logo.ico"> 
+		<!-- Etiqueta viewport sirve para ajustar a la pantalla de dispositivos moviles. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+		<!-- Estilos propios -->
+		<link rel="StyleSheet" href="CSS/estilos.css">	
+		<!-- Fuente de imagenes, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+		<link rel="stylesheet" href="CSS/material-icons.css">	
+		<!-- Framework BOOSTRAP, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css" > 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Fuentes de texto-->
+		<link rel="stylesheet" href="FUENTES/open-sans.css" > 
+		<link rel="stylesheet" href="FUENTES/dosis.css" > 
+		<!--Procesamiento para listar lecciones -->
+		<script type="text/javascript" src="JS/procesamientoAjaxLeccion.js"></script>
+
+	</head>
+	<body>
+		<header>
+				<nav class="navbar navbar-default barra_lateral color_base" style="color:white" role="navigation">
+					<!-- El logotipo y el icono que despliega el menú se agrupan
+			    	para mostrarlos mejor en los dispositivos móviles -->
+			  		<div class="navbar-header">
+			    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+			        		<span class="sr-only">Desplegar navegación</span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+			      		</button>
+			    		<a class="mi_estilo navbar-brand" style="color: white; font-size: 25px" href="index.html"> GccCompiler</a>
+			  		</div>
+			 
+			  		<!-- Agrupar los enlaces de navegación, los formularios y cualquier
+			       	otro elemento que se pueda ocultar al minimizar la barra -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+			    		<ul class="nav navbar-nav">
+			      			<li><a href="practica.html" style="color: white;">Practica</a></li>
+			      			<li><a href="leccion.html" style="color: white;">Leccion</a></li>
+			      			<li><a href="#" style="color: white;">Acerca de...</a></li>
+			    		</ul>
+			 
+			 
+			    		<ul class="nav navbar-nav navbar-right">
+			      			<li><a href="#" style="color: white;" >Oscar Oliva</a></li>
+			    		</ul>   
+			  		</div>
+				</nav>
+		</header>
+	
+		<div class="contenedor_principal">
+			<div class="container" style="width: 98%">
+			    <div class="row">
+			    	<div class="col-md-12">
+						<div class="panel panel-info">
+						   	<div class="panel-heading">Panel de búsqueda.</div>
+						    <div class="panel-body">
+						    	<div class="col-md-3">
+						    		<label for="select_couch">Busqueda:</label>
+						    		<br>
+										<input type="text" class="form-control" placeholder="Search.." id="txt_busqueda" style="width: 70%; display: inline;">
+										<button id="btn_busqueda" type="button" class="btn btn-primary" style="background-color: transparent; border:0px; ">
+											<i  class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">search</i>
+										</button>								
+								</div>
+								<div class="col-md-2">
+										<label for="select_couch">Seleccionar Filtro:</label>
+									    <select class="form-control" id="select_couch"  style="width: 100%;">
+									      	<option value=0>sin filtro</option>
+									      	<option value=1>G-couch</option>
+									      	<option value=2>A-couch</option>
+									    </select>
+								</div>
+								<div class="col-md-4">
+									<label for="select_couch">Lecciones:</label>
+									<br>
+									<a  href="g_couch.html" class="btn btn-primary">Crear G-couch</a>
+									<a  href="a_couch.html" class="btn btn-primary">Crear A-couch</a>			
+									<a  class="btn btn-danger" href="practica.html">Practicar</a>
+
+									
+								</div>
+								<div class="col-md-2">
+									<label for="archivo">Carga Masiva</label>
+									<input type="file" class="btn btn-success" style="width: 90%;" id="archivo">
+								</div>
+						    </div>
+						</div>
+			    	</div>
+			    </div>
+			    <div class="row">
+			    	<div class="col-md-12">
+						<div class="panel panel-info">
+						   	<div class="panel-heading">Listato de lecciones.</div>
+						    <div class="panel-body">
+						    	<table class="table table-striped mt-3">
+					                <thead>
+					                  <tr>
+					                    <th scope="col">#</th>
+					                    <th scope="col">Titulo</th>
+					                    <th scope="col">Prueba</th>
+					                    <th scope="col">Accion</th>
+					                  </tr>
+					                </thead>
+					                <tbody id="cuerpo_tabla">
+					                								
+					                </tbody>
+              					</table>
+						    </div>
+						</div>
+			    	</div>
+			    </div>
+			</div>
+	 	</div> 
+
+	 	<footer>
+			<nav>
+				<div class="color_base" style="height: 50px">
+				</div>
+			</nav>
+		</footer>
+	</body>
+</html>

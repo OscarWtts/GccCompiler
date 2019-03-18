@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GccCompiler</title>
+		<link rel="shortcut icon" href="IMG/logo.ico"> 
+		<!-- Etiqueta viewport sirve para ajustar a la pantalla de dispositivos moviles. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+		<!-- Estilos propios -->
+		<link rel="StyleSheet" href="CSS/estilos.css">	
+		<!-- Fuente de imagenes, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+		<link rel="stylesheet" href="CSS/material-icons.css">	
+		<!-- Framework BOOSTRAP, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css" >
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<!-- Fuentes de texto-->
+		<link rel="stylesheet" href="FUENTES/open-sans.css" > 
+		<link rel="stylesheet" href="FUENTES/dosis.css" > 
+		<!-- Utilizado para poder cargar archivos a nuestros editores en modo avanzado -->
+		<script type="text/javascript" src="JS/carga_archivos.js"></script>
+		<script type="text/javascript" src="JS/procesamientoAjax.js"></script>
+		<!-- Importamos las librerias para el debugger --> 
+		<link rel="stylesheet" href="lib/codemirror.css"> 
+		<link rel="stylesheet" href="addon/hint/show-hint.css">
+		<link rel="stylesheet" href="theme/neo.css"> 
+
+		<script src="lib/codemirror.js"></script> 
+		<script src="mode/clike/clike.js"></script> 
+		<script src="addon/hint/show-hint.js"></script> 
+		<script src="addon/hint/css-hint.js"></script> 
+		
+
+	</head>
+	<body>
+
+		<header>
+				<nav class="navbar navbar-default barra_lateral color_base" style="color:white" role="navigation">
+					<!-- El logotipo y el icono que despliega el menú se agrupan
+			    	para mostrarlos mejor en los dispositivos móviles -->
+			  		<div class="navbar-header">
+			    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+			        		<span class="sr-only">Desplegar navegación</span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+			      		</button>
+			    		<a class="mi_estilo navbar-brand" style="color: white; font-size: 25px" href="index.html"> GccCompiler</a>
+			  		</div>
+			 
+			  		<!-- Agrupar los enlaces de navegación, los formularios y cualquier
+			       	otro elemento que se pueda ocultar al minimizar la barra -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+			    		<ul class="nav navbar-nav">
+			      			<li><a href="practica.html" style="color: white;">Practica</a></li>
+			      			<li><a href="leccion.html" style="color: white;">Leccion</a></li>
+			      			<li><a href="#" style="color: white;">Acerca de...</a></li>
+			    		</ul>
+			 
+			 
+			    		<ul class="nav navbar-nav navbar-right">
+			      			<li><a href="#" style="color: white;">Oscar Oliva</a></li>
+			    		</ul>   
+			  		</div>
+				</nav>
+		</header>
+
+		<form action="generacion_cuadruplos" method="post" id="form_datos">
+			<div class="contenedor_principal">
+				<div class="container" style="width: 98%">			    
+					<div class="row">		
+						<div class="col-md-4">
+							<div class="col-xs-6">
+								<span style="font-family: 'Dosis'; padding-right: 50px; font-size: 33px">Alto Nivel... </span>
+							</div>
+							<div class="col-sm-6" style="text-align: right; padding-right: 1px">	
+								<!-- BOTON PARA EJECUTAR -->
+								<button type="submit" class="btn_sf">
+									<i id="btn_ejecutar" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">play_arrow</i>
+								</button>
+								<!-- BOTON PARA SUBIR ARCHIVOS -->
+								<button class="fileUpload btn_sf" >
+								    <i id="btn_archivo" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">file_upload</i>
+								    <input type="file" class="upload" id="archivo_altoNivel" multiple />
+								</button>
+								<!-- BOTON PARA DESCARGAR -->
+								<i  id="btn_descarga_altoNivel" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">file_download</i>	   			
+		                    </div>
+							.
+		                    <textarea class="form-control " style="background-color: transparent; font-family: Raleway; font-size: 13px; color: teal;" 
+		                        rows="14" id="txt_altoNivel" name="txt_altoNivel" autofocus></textarea>
+				      	</div>
+
+			      		<div class="col-md-4">
+			      			<div class="col-xs-6">
+			       				<span style="font-family: 'Dosis'; padding-right: 50px; font-size: 33px">3d...</span>
+							</div>
+
+							<div class="col-sm-6" style="text-align: right; padding-right: 1px">	
+								<button class="fileUpload btn_sf" >
+								    <i id="btn_archivo" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">file_upload</i>
+								    <input type="file" class="upload" id="archivo_cuadruplos" multiple />
+								</button>
+								<!-- BOTON PARA DESCARGAR -->
+								<i  id="btn_descarga_cuadruplo" class="material-icons color_base_texto btn_avanzado " style="font-size: 30px">file_download</i>
+							</div>
+			    			<textarea class="form-control " style="background-color: transparent; font-family: Raleway; font-size: 13px; color: teal;"" 
+	                        rows="16" id="txt_3d" name="txt_3d"></textarea>
+					  	</div>	
+
+						<!-- Cuadruplos -->
+					  	<div class="col-md-4">
+			      			<div class="col-xs-6">
+			       				<span style="font-family: 'Dosis'; padding-right: 50px; font-size: 33px">Cuadruplos...</span>
+							</div>
+
+							<div class="col-sm-6" style="text-align: right; padding-right: 1px">
+								<button  class="btn_sf">
+									<i id="btn_ejecutarCuadruplo" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">play_arrow</i>
+								</button>	
+								<button class="fileUpload btn_sf" >
+								    <i id="btn_archivo" class="material-icons color_base_texto btn_avanzado" style="font-size: 30px">file_upload</i>
+								    <input type="file" class="upload" id="archivo_cuadruplos" multiple />
+								</button>
+								<!-- BOTON PARA DESCARGAR -->
+								<i  id="btn_descarga_cuadruplo" class="material-icons color_base_texto btn_avanzado " style="font-size: 30px">file_download</i>
+							</div>
+			    			<textarea class="form-control " style="background-color: transparent; font-family: Raleway; font-size: 13px; color: teal;"" 
+	                        rows="16" id="txt_cuadruplo" name="txt_cuadruplo"></textarea>
+					  	</div>	
+					</div>	      			       
+				</div>			   
+			</div> 
+		</form>
+		
+		<div class="col-md-12">
+			<div class="tab">
+			  <button class="tablinks" onclick="openCity(event, 'Consola')">Consola</button>
+			  <button class="tablinks" onclick="openCity(event, 'Tabla de Simbolos')">Tabla de Simbolos</button>
+			  <button class="tablinks" onclick="openCity(event, 'Errores')">Errores</button>
+			  <button class="tablinks" onclick="openCity(event, 'Stack')">Stack</button>
+			  <button class="tablinks" onclick="openCity(event, 'Heap')">Heap</button>
+			</div>
+
+			<div id="Consola" class="tabcontent">
+			 	<textarea class="form-control " style="background-color: transparent; font-family: Raleway; font-size: 13px; color: teal;" rows="4" id="txt_consola" name="txt_consola" >Consola</textarea>
+			</div>
+
+			<div id="Tabla de Simbolos" class="tabcontent">
+			  	<table class="table table-striped mt-3">
+					<thead>
+					 	<tr>
+					   		<th scope="col">Nombre</th>
+					   		<th scope="col">Tipo</th>
+					   		<th scope="col">Ambito</th>
+					   		<th scope="col">Rol</th>
+					   		<th scope="col">Posicion</th>
+					    </tr>
+					</thead>
+		            <tbody id="cuerpo_tablaSimbolos">
+					   	     								
+               		</tbody>
+          		</table>
+			</div>
+
+			<div id="Errores" class="tabcontent">
+				<table class="table table-striped mt-3">
+					<thead>
+					 	<tr>
+					    	<th scope="col">#</th>
+					   		<th scope="col">Posicion</th>
+					   		<th scope="col">Tipo</th>
+					   		<th scope="col">Descripcion</th>
+					    </tr>
+					</thead>
+		            <tbody id="cuerpo_tablaErrores">
+					   	     								
+               		</tbody>
+          		</table>
+			</div>
+
+			<div id="Stack" class="tabcontent">
+			  	<table class="table table-striped mt-3">
+					<thead>
+					 	<tr>
+					    	<th scope="col">Posicion</th>
+					   		<th scope="col">Contenido</th>
+					   		<th scope="col">Ambito</th>
+					    </tr>
+					</thead>
+		            <tbody id="cuerpo_tablaStack">
+					   	     								
+               		</tbody>
+          		</table>
+			</div>
+
+			<div id="Heap" class="tabcontent">
+			  	<table class="table table-striped mt-3">
+					<thead>
+					 	<tr>
+					    	<th scope="col">Posicion</th>
+					   		<th scope="col">Contenido</th>
+					    </tr>
+					</thead>
+		            <tbody id="cuerpo_tablaHeap">
+					   	     								
+               		</tbody>
+          		</table>
+			</div>
+		</div>
+
+		<footer>
+			<nav>
+				<div class="color_base" style="height: 50px">
+				</div>
+			</nav>
+		</footer>
+
+
+		<!-- Funcionalidad para navbar --> 
+		<script>
+		function openCity(evt, cityName) {
+		    var i, tabcontent, tablinks;
+		    tabcontent = document.getElementsByClassName("tabcontent");
+		    for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+		    tablinks = document.getElementsByClassName("tablinks");
+		    for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		    }
+		    document.getElementById(cityName).style.display = "block";
+		    evt.currentTarget.className += " active";
+		}
+		</script>
+
+		<script>
+ 
+			var editor = CodeMirror.fromTextArea(document.getElementById("txt_altoNivel"), {
+				mode: "text/x-c++src",
+				value: "#test {\n\tposition: absolute;\n\t width: 50px;\n\theight: 80px;\n}",
+				tabSize: 4,
+				lineNumbers: true,
+				theme: "neo",
+				firstLineNumber: 1,
+			    extraKeys: {"Ctrl-Space": "autocomplete"},
+			    gutters: ["CodeMirror-linenumbers", "breakpoints"]
+			});
+			editor.on("gutterClick", function(cm, n) {
+			  var info = cm.lineInfo(n);
+			  cm.setGutterMarker(n, "breakpoints", info.gutterMarkers ? null : makeMarker());
+			  console.log(editor.getCursor());
+			  console.log(info.line);
+			  console.log(info);
+			  editor.setCursor(info.line,0);
+			});
+
+			editor.setSize("100%","300px");
+
+			/*var editor2 = CodeMirror.fromTextArea(document.getElementById("txt_cuadruplo"), {
+				mode: "text/x-c++src",
+				value: "#test {\n\tposition: absolute;\n\t width: 50px;\n\theight: 80px;\n}",
+				tabSize: 4,
+				lineNumbers: true,
+				theme: "neo",
+				firstLineNumber: 1,
+			    extraKeys: {"Ctrl-Space": "autocomplete"},
+			    gutters: ["CodeMirror-linenumbers", "breakpoints"]
+			});
+			editor2.on("gutterClick", function(cm, n) {
+			  var info = cm.lineInfo(n);
+			  cm.setGutterMarker(n, "breakpoints", info.gutterMarkers ? null : makeMarker());
+			  console.log(editor2.getCursor());
+			  console.log(info.line);
+			  console.log(info);
+			  editor2.setCursor(info.line,0);
+			});
+
+			editor2.setSize("100%","300px");
+
+			function makeMarker() {
+			  var marker = document.createElement("div");
+			  marker.style.color = "#08088A";
+			  marker.innerHTML = "●";
+			  return marker;
+			}*/
+
+		</script>
+
+		<script src="JS/manipulacion3d.js" type="text/javascript"></script>
+	</body>
+</html>

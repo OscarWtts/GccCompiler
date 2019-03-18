@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GccCompiler</title>
+		<link rel="shortcut icon" href="IMG/logo.ico"> 
+		<!-- Etiqueta viewport sirve para ajustar a la pantalla de dispositivos moviles. -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+		<!-- Estilos propios -->
+		<link rel="StyleSheet" href="CSS/estilos.css">	
+		<!-- Fuente de imagenes, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+		<link rel="stylesheet" href="CSS/material-icons.css">	
+		<!-- Framework BOOSTRAP, primer link de internet segundo local por si no hay internet -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="CSS/bootstrap-3.3.7-dist/css/bootstrap.min.css" > 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Fuentes de texto-->
+		<link rel="stylesheet" href="FUENTES/open-sans.css" > 
+		<link rel="stylesheet" href="FUENTES/dosis.css" > 
+	</head>
+	<body>
+		<header>
+				<nav class="navbar navbar-default barra_lateral color_base" style="color:white" role="navigation">
+					<!-- El logotipo y el icono que despliega el menú se agrupan
+			    	para mostrarlos mejor en los dispositivos móviles -->
+			  		<div class="navbar-header">
+			    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
+			        		<span class="sr-only">Desplegar navegación</span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+				      		<span class="icon-bar"></span>
+			      		</button>
+			    		<a class="mi_estilo navbar-brand" style="color: white; font-size: 25px" href="index.html"> GccCompiler</a>
+			  		</div>
+			 
+			  		<!-- Agrupar los enlaces de navegación, los formularios y cualquier
+			       	otro elemento que se pueda ocultar al minimizar la barra -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+			    		<ul class="nav navbar-nav">
+			      			<li><a href="practica.html" style="color: white;">Practica</a></li>
+			      			<li><a href="leccion.html" style="color: white;">Leccion</a></li>
+			      			<li><a href="#" style="color: white;">Acerca de...</a></li>
+			    		</ul>
+			 
+			 
+			    		<ul class="nav navbar-nav navbar-right">
+			      			<li><a href="#" style="color: white;" >Oscar Oliva</a></li>
+			    		</ul>   
+			  		</div>
+				</nav>
+		</header>
+	
+		<div class="contenedor_principal">
+			<div class="container" style="width: 98%">
+			    <section class="container mt-5 ">
+			    	<div class="panel panel-primary">
+						<div class="panel-heading">Creación leccion <STRONG>G-couch.</STRONG></div>
+						<div class="panel-body">
+					      	<form action="gcouch" method="POST" id="form_gcouch">
+							    <div class="form-row">
+					 	            <div class="form-group col-md-6">
+							            <label for="titulo">Titulo</label>
+							            <input type="text" class="form-control" name="titulo" placeholder="titulo" required="" autofocus="">
+							        </div>
+							        <div class="form-group col-md-6">
+							            <label for="explicacion">Explicación</label>
+							            <textarea class="form-control " style="font-family: Raleway; font-size: 13px; color: teal;"" id="explicacion" name="explicacion" required=""></textarea>
+							        </div>
+							    </div>
+								<div class="form-row">
+							    	<div class="form-group col-md-6">
+							        	<label for="codigo">Código de Ejemplo</label>
+							        	<textarea class="form-control " style="font-family: Raleway; font-size: 13px; color: teal;"" id="codigo" name="codigo" rows="9" required=""></textarea>
+							        </div>
+							        <div class="form-group col-md-6">
+							            <label for="enunciado">Enunciado</label>
+							        	<textarea class="form-control " style="font-family: Raleway; font-size: 13px; color: teal;"" id="enunciado" name="enunciado" rows="9" required=""></textarea>
+						            </div>                  
+						        </div>
+						        <div class="form-row">
+					 	            <div class="form-group col-md-6">
+							            <label for="prueba">Pruebas</label>
+							            <input type="text" class="form-control" name="prueba" placeholder="tarea(15) = 2;" required="" autofocus="">
+							        </div>
+									<div class="form-group col-md-6">
+										<br>
+							        	<input type="submit" id="btn1"  class="btn btn-primary" value="Crear Leccion">
+							        	<a type="button" href="leccion.html" class="btn btn-danger">Cancelar</a>
+							        </div>
+							    </div>	                
+				                		                
+				            </form>
+				        </div>
+			    </section>
+			</div>
+	 	</div> 
+
+	 	<footer>
+			<nav>
+				<div class="color_base" style="height: 50px">
+				</div>
+			</nav>
+		</footer>
+	</body>
+</html>
